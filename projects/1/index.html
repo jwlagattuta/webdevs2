@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NYT Books API</title>
+        <style>
+            p, h {font-family: courier ; color: #00FFFF;}
+            p {font-size:1.4em;line-height:1.5em; margin-left: 24px;}
+            pre {font-size: 2em;}
+            
+            div {
+                background-color:#9966ff; 
+                border: 1px solid #6600cc; 
+                border-radius: 6px;
+                min-height:75px;
+                padding:15px;
+            }
+
+        </style>
+    </head>
+    <body>
+    <h1>NYT Books API</h1>
+    
+    <!-- div for instructions and form -->
+    
+    
+    
+    <div id="form">
+        <p>
+            Enter your author of choice. First and last name are required.  
+        </p>
+        <input id="txtQuery" type="text" placeholder="Enter an author!"></input>
+        <button type="button" id="btnSearch" >Search!</button>
+    </div>
+    
+    <!-- a div to store the results -->
+    <div id="results">
+        Jessica Gonzalez & Joey Lagattuta's Project <hr>
+        This app was designed to give information about a certain type of author. For example, we've included the title of the book, the name of the article that focuses on that particular author, a part of the summary if available, and the url of the whole article if one would like. If you wish to get information, type the first and last name of the author that you want. Ex: "Jane Austen"  
+            
+        
+        
+        
+        
+    </div>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        
+        
+         var googleData;//global variable. make sure its outside function
+         
+         
+        $(function(){
+            
+            var baseUrl= "https://api.nytimes.com/svc/books/v3/reviews.json";
+            var url= baseUrl + "?api-key=" + "b869b74a82b54fd48c68c7a1f3af653f";
+            
+            
+            console.log(url);
+            
+           $("#btnSearch").on("click", function() { 
+               
+               $("#results").html("");
+               
+               var searchTerm= $("#txtQuery").val();
+               
+               var searchUrl= url + "&author=" + searchTerm;//keeps on adding urls
+               
+               
+               
+               console.log(searchUrl);
+               
+               $.getJSON(searchUrl)
+                .done(function (data) {
+                    googleData= data;
+                    
+                    $.each(data.results, function(index, value){
+                        var html= "<h2>" 
+                        +(value.book_author) + "<p>" + "Article Name: " + (value.book_title)+ "</p>" + "<p>" + "URL of Article: " +
+                        (value.url) + "</p>" + "<p>" + "Author of Article: " + (value.byline)+ "</p>" + "Summary: " +(value.summary || "No Summary Found") +"</p>" 
+    
+                        + "</h2>";
+                        
+                        $("#results").append(html);
+                        //<a href="#results" target="_blank">Link</a>>
+                        //$("#results").append(href);
+                        //<a href="value.url" target="_blank">Visit this link to see the full article!</a>
+                    })
+            
+                    
+               
+           });
+           
+                    
+                //console.log(data);
+                //googleData= data;//setting value to be that data. so you can do testing in the jquery console
+            
+                })
+                //.fail (function () {});
+                
+        });
+            
+            
+            
+            
+    
+        
+    </script>
+    </body>
+</html>
