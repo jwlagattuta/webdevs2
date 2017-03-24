@@ -1,0 +1,24 @@
+{
+  "short_name": "Moms Place",
+  "name": "Moms Place",
+  "icons": [
+  {
+    "src":"https://img.clipartfest.com/843de679f3df8950bdcd84a2f3d087e0_white-letter-m-centered-inside-m-letter-clipart-transparent_600-600.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }
+],
+  "start_url": "https://preview.c9users.io/jwlagattuta/webdevs2/projects/5/atHomeApp.html?_c9_id=livepreview1&_c9_host=https://ide.c9.io",
+  "background_color": "#000",
+  "Theme_color": "#536878",
+  "display": "standalone"
+}
+
+
+
+
+
+
+
+
+/?utm_source=homescreen

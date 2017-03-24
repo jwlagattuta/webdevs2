@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style>
+      screen {display: none;}
+      
+  </style>
+  </head>
+  <body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Moms Place</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Moms Place</span>
+        <nav class="mdl-navigation">
+          <a id="link1" class="mdl-navigation__link" href="1.html">Photo Fun</a>
+          <a id="link2" class="mdl-navigation__link" href="2.html">Hockey Schedule</a>
+          <a id="link3" class="mdl-navigation__link" href="3.html">iPhone Help</a>
+          
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div id= "screen1" class="screen page-content"></div> 
+        <div id= "screen2" class="screen page-content"></div>
+        <div id= "screen3" class="screen page-content"></div>
+        
+        
+        <div>
+            <h1><font size="5"><font color="#a34dff">Photo Fun</font></h1>
+            
+            <p><font color="#a34dff">Hey mom! I know how much you love your pictures so I decided to dedicate this entire page to pictures of places our family has been on vacation. I also added general pictures that I know you would like. Feel free to scroll at ease.</font></p>
+            <img src="http://www3.hilton.com/resources/media/hi/HNLHVHH/en_US/img/shared/full_page_image_gallery/main/HH_hotelexterior01_1270x560_FitToBoxSmallDimension_Center.jpg" height=90>
+            <br>
+            <br>
+            <img src= "http://www.hiltonhead.com/wp-content/uploads/10.original.jpg" height= "90">
+            <br>
+            <br>
+            <img src= "http://www.wdwinfo.com/wp-content/uploads/2017/03/castle.jpg" height= "100">
+            <br>
+            <br>
+            <img src= "http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1429821784/CHARMING0415-san-francisco.jpg?itok=vmayDoQQ" height= "100">
+            <br>
+            <br>
+            <img src= "http://www.bleachernation.com/wp-content/uploads/2015/06/rizzo-bryant-300x225.png" height= "120">
+            <br>
+            <br>
+            <img src= "https://cdn0.vox-cdn.com/thumbor/Zsk6SbdhjBdkgH717_a6goPK9KE=/0x126:591x458/1600x900/cdn0.vox-cdn.com/uploads/chorus_image/image/48476165/download.0.0.png" height= "100">
+            
+            <body style="background-color:#e5ccff;">
+
+            
+        </div>
+
+      </main>
+    </div>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+   /*global $*/
+   
+    $(function() {
+        $("#screen1").show();
+        
+        $("#link1").on("click", function(){
+            $(".screen").hide();
+            $("#screen1").show();
+        });
+         $("#link2").on("click", function(){
+             $(".screen").hide();
+            $("#screen2").show();
+        });
+         $("#link3").on("click", function(){
+             $(".screen").hide();
+             $("#screen3").show();
+        });
+    });
+    </script>
+    
+  </body>
+</html>
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
+
+    </body>
+</html>
