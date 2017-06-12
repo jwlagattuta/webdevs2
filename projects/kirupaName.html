@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Text Example</title>
+  <style>
+    canvas {
+      border: #333 10px solid;
+    }
+  </style>
+</head>
+ 
+<body>
+  <canvas id="myCanvas" width="450px" height="350px"></canvas>
+ 
+  <script>
+  
+  var canvas = document.querySelector("#myCanvas");
+var context = canvas.getContext("2d");
+ 
+ 
+ 
+ context.fillStyle = "#0dc161";
+ context.textAlign = "middle";
+ context.font = "bold 96px Helvetica, Arial, sans-serif";
+context.fillText("Joey", 40, 125);
+
+ 
+  </script>
+ 
+</body>
+ 
+</html>

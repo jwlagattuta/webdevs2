@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <style> 
+    #backgroundgame{
+      border: 5px solid black;
+      background-image:url(http://cdn1.theinertia.com/wp-content/uploads/2016/05/dead-1.jpg);
+      background-size:cover;
+      
+    }
+    #player{display:none;}
+    #enemy{display:none;}
+    #pew{display:none;}
+    
+    body{
+      background-color:black;
+    }
+    
+  </style>
+  </head>
+  <body>
+    
+  <canvas id = "backgroundgame" width = "1250" height = "550">
+    
+  </canvas>
+    
+  
+     <img id="player" src="https://i.redd.it/4fmde0n92flx.png" style= "width:50px;height:50px;">
+     <img id ="enemy" src ="https://t1.rbxcdn.com/9795751151c8726ab2298ba97e7a92e0" style="width:50px;height:50px;">
+     <img id="pew" src="http://ian.umces.edu/imagelibrary/albums/userpics/12789/normal_ian-symbol-swimmer.png" style="width:5px;height:5px;">
+    
+    <script>
+   
+    var image = document.getElementById("player");
+    var canvas = document.getElementById("backgroundgame");
+    var ctx = canvas.getContext("2d");
+      var livesRemaining = 4;
+      var score = 0;
+      var level = 1;
+      var paused = false;
+      var player = {x: 0, y: 0, costume: "",speed:1};
+      var harm = {x: 0, y: 0, costume: "", speed: 1};
+      var benefit = {x: 0, y: 0, costume: "http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/42/420dd1641df897b263e0bb378b9d0fee746303a8_full.jpg", speed: 1};
+      /*
+      
+        main animation loop
+      */
+      
+       var c = document.getElementById("backgroundgame");
+      var ctx = c.getContext("2d");
+      var image = document.getElementById("player");
+      var playerX = 0
+      var playerY = 100
+    
+      
+      
+       var harmer = document.getElementById("enemy");
+      harm.x = 250
+      harm.y = Math.floor(Math.random() * 300) 
+      
+      var benefiter= document.getElementById("pew");
+      benefit.x = 300
+      benefit.y = Math.floor(Math.random() * 300)
+           
+      function animate() {
+           
+            
+          ctx.clearRect(0,0,c.width,c.height);  
+        // update harm and benefit y coordinates
+          harm.x = harm.x - 1;
+            benefit.x= benefit.x - 1;
+        // draw background
+        
+        //  draw player
+ ctx.drawImage(image, playerX, playerY, 100, 100);
+        // draw harm 
+         ctx.drawImage(harmer, harm.x , harm.y, 100, 100)
+        // check for and handle edge condition
+          if (harm.x < 0 )
+        {
+          harm.x = c.width;
+        }
+        // check for and handle harm collision
+      
+        // draw benefit
+      ctx.drawImage(benefiter, benefit.x, benefit.y, 100, 100)
+        // check for and handle edge condition
+        if (benefit.x < 0 )
+        {
+          benefit.x = c.width;
+        }
+        // check for benefit collision
+        
+        // draw text (lives and score)
+        
+        
+        
+        //  if the game has not been paused, 
+        if (!paused) {
+          requestAnimationFrame(animate);
+        }
+        
+      
+      }
+        animate();
+      
+       document.addEventListener("keydown", move )
+        function move (e) {
+          //ctx.clearRect(0,0,c.width,c.height);
+         
+          if (e.keyCode == 40){
+            playerY = playerY + 3 
+          }
+          if (e.keyCode == 38){
+            playerY = playerY - 3 
+          }
+           
+        };
+      
+     
+      
+      
+      
+     
+      //  event handler for moving player
+      //    use onKeyPress event, and change the player.y value based on the up/down keys
+      
+      
+      
+      
+      
+    </script>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <style>
+      body {
+        background-image: url("http://antarcticajournal.com/wp-content/uploads/2015/05/xnjduclxd42vtowtt9ig.jpg");
+       height:"350px"; width:"450px";}
+    
+    
+    </style>
+  </head>
+  <body>
+   <canvas id="myCanvas" width="450px" height="350px" style="border:1px solid #000000;"></canvas>
+    
+    
+    
+    <script>
+      var livesRemaining = 3;
+      var score = 0;
+      var level = 1;
+      var paused = false;
+      var player = {x: 0, y: 0, costume: ""};
+      var harm = {x: 0, y: 0, costume: "", speed: 1};
+      var benefit = {x: 0, y: 0, costume: "", speed: 1};
+      /*
+      
+        main animation loop
+        
+        
+        
+      
+      */
+      function animate() {
+        
+        // update harm and benefit y coordinates
+        
+        // draw background
+        
+        //  draw player
+        
+        // draw harm 
+        
+        // check for and handle edge condition
+        
+        // check for and handle harm collision
+      
+        // draw benefit
+        
+        // check for and handle edge condition
+        
+        // check for benefit collision
+        
+        // draw text (lives and score)
+        
+        
+        
+        //  if the game has not been paused, 
+        if (!paused) {
+          requestAnimationFrame(animate);
+        }
+        
+      }
+      
+      
+      //  event handler for moving player
+      //    use onKeyPress event, and change the player.y value based on the up/down keys
+      
+      
+       function animate() {
+        ctx.clearRect(0,0,c.width, c.height);
+        x += 1;
+        ctx.beginPath();
+        ctx.fillStyle = "green";
+        ctx.arc(x,y,30, 0, Math.PI*2);
+        ctx.fill();
+       
+        requestAnimationFrame(animate);
+      }
+      animate();   
+      
+      
+    </script>
+    
+    
+  </body>
+</html>
+
+
+
+
+
+ 
